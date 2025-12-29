@@ -3,7 +3,7 @@ let score = 0;
 let questionValidee = false;
 
 const questions = [
-    {
+    /*{
         type: "text",
         question: "Quelle est la ville dans laquelle nous nous sommes rencontrés ?",
         bonneReponse: "Le Lamentin"
@@ -28,9 +28,9 @@ const questions = [
     {
         type: "qcm",
         question: " Quel adjectif nous définit le mieux en deuxième?",
-        options: ["précautionneux", "gourmands", "studieux", "en avance", "en retard"],
+        options: ["précautionneux", "studieux", "en avance", "en retard", "gourmands"],
         bonneReponse: "gourmands"
-    },
+    },*/
     {
         type: "text",
         question: " Quel aliment fait le plus l'unanimité entre nous deux ?",
@@ -126,6 +126,7 @@ function finQuiz() {
         <h1>🎉 Fin du quiz</h1>
         <p>Score : ${score} / ${questions.length}</p>
         <p><strong>hihi bien joué</strong></p>
+        <p><strong>avec ces questions, tu as quelques éléments pour imaginer le cadeau</strong></p>
         ${boutonCadeau}
     `;
 }

@@ -17,9 +17,9 @@ body.wrong {
 }
 
 body.cadeau {
-    background-image: url("image_coeur.png");
-    background-size: cover;
-    background-position: center;
+    background-image: url("image_coeur.jpg.jpg");
+    background-repeat: repeat;
+    background-size: 25% 25%; /* 4 x 4 = 16 */
 }
 
 
