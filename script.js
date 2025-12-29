@@ -3,7 +3,7 @@ let score = 0;
 let questionValidee = false;
 
 const questions = [
-    /*{
+    {
         type: "text",
         question: "Quelle est la ville dans laquelle nous nous sommes rencontrés ?",
         bonneReponse: "Le Lamentin"
@@ -35,7 +35,7 @@ const questions = [
         type: "text",
         question: " Quel langage de l'amour a-t-on en commun ?",
         bonneReponse: "la cuisine"
-    },*/
+    },
     {
         type: "text",
         question: " Quel aliment fait le plus l'unanimité entre nous deux ?",
