@@ -30,6 +30,11 @@ const questions = [
         question: " Quel adjectif nous définit le mieux en deuxième?",
         options: ["précautionneux", "studieux", "en avance", "en retard", "gourmands"],
         bonneReponse: "gourmands"
+    },
+    {
+        type: "text",
+        question: " Quel langage de l'amour a-t-on en commun ?",
+        bonneReponse: "la cuisine"
     },*/
     {
         type: "text",
@@ -90,12 +95,14 @@ function valider() {
     if (bonne) {
         score++;
         questionValidee = true;
+        document.body.classList.remove("good", "bad", "cadeau");
         document.body.classList.add("good");
-        document.getElementById("message").innerText = "✅ Bonne réponse !";
+        document.getElementById("message").innerText = "✅ On est connectééééés";
         document.getElementById("next-btn").style.display = "inline-block";
     } else {
+        document.body.classList.remove("good", "bad", "cadeau");
         document.body.classList.add("bad");
-        document.getElementById("message").innerText = "❌ Réessaie";
+        document.getElementById("message").innerText = "❌ Aie aie aie....";
     }
 }
 
@@ -108,6 +115,25 @@ function questionSuivante() {
     }
 }
 
+function afficherMosaique() {
+    const images = [
+        "coeur.jpg",
+        "tab_choc.jpg",
+        "eiffel.jpg"
+    ];
+
+    const mosaique = document.createElement("div");
+    mosaique.className = "mosaique";
+
+    for (let i = 0; i < 91; i++) {
+        const tile = document.createElement("div");
+        tile.style.backgroundImage = `url("${images[i % images.length]}")`;
+        mosaique.appendChild(tile);
+    }
+
+    document.body.appendChild(mosaique);
+}
+
 function finQuiz() {
     document.body.className = "";
 
@@ -115,8 +141,13 @@ function finQuiz() {
     let boutonCadeau = "";
 
     if (score > moyenne) {
+        document.body.className = "cadeau";
+        afficherMosaique();
+        if (!document.querySelector(".mosaique")) {
+            afficherMosaique();
+        }
         boutonCadeau = `
-            <button onclick="window.location.href='lieeen'">
+            <button onclick="window.location.href='https://track.pstmrk.it/3s/wecandoo.fr%2Fdiscover-my-gift%2Fa1f0a945-5b07-4568-a73f-9b5c2a328fbf%3Futm_medium%3Demail%26utm_source%3Dsite%26utm_campaign%3DgiftCardBuyer/GQxH/iFnCAQ/AQ/59d0a1cc-e96d-4835-8ed4-326e07906629/2/Cu3rmpwfrL'">
                 🎁 Voir le cadeau
             </button>
         `;
