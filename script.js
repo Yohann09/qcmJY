@@ -4,17 +4,40 @@ let questionValidee = false;
 
 const questions = [
     {
-        type: "qcm",
-        question: "Quelle est la capitale de la France ?",
-        options: ["Lyon", "Paris", "Marseille"],
-        bonneReponse: "Paris"
+        type: "text",
+        question: "Quelle est la ville dans laquelle nous nous sommes rencontrés ?",
+        bonneReponse: "Le Lamentin"
     },
     {
         type: "text",
-        question: "Combien font 2 + 2 ?",
-        bonneReponse: "4"
+        question: "Quelle est la ville dans laquelle on a passé le plus de temps ensemble (depuis qu'on est en couple) ?",
+        bonneReponse: "Lyon"
+    },
+    {
+        type: "qcm",
+        question: "Quelle est la ville dans laquelle on se projette le plus ?",
+        options: ["Lyon", "Paris", "Aix-en-Provence", "Saint Andiol", "Lille", "Porto Vecchio"],
+        bonneReponse: "Paris"
+    },
+    {
+        type: "qcm",
+        question: " Quel adjectif nous définit le mieux ?",
+        options: ["jovials", "en bon terme", "amoureux", "copaings", "autre ??"],
+        bonneReponse: "amoureux"
+    },
+    {
+        type: "qcm",
+        question: " Quel adjectif nous définit le mieux en deuxième?",
+        options: ["précautionneux", "gourmands", "studieux", "en avance", "en retard"],
+        bonneReponse: "gourmands"
+    },
+    {
+        type: "text",
+        question: " Quel aliment fait le plus l'unanimité entre nous deux ?",
+        bonneReponse: "chocolat"
     }
 ];
+
 
 function afficherQuestion() {
     questionValidee = false;
@@ -87,11 +110,25 @@ function questionSuivante() {
 
 function finQuiz() {
     document.body.className = "";
+
+    const moyenne = questions.length / 2;
+    let boutonCadeau = "";
+
+    if (score > moyenne) {
+        boutonCadeau = `
+            <button onclick="window.location.href='lieeen'">
+                🎁 Voir le cadeau
+            </button>
+        `;
+    }
+
     document.querySelector(".container").innerHTML = `
         <h1>🎉 Fin du quiz</h1>
         <p>Score : ${score} / ${questions.length}</p>
         <p><strong>hihi bien joué</strong></p>
+        ${boutonCadeau}
     `;
 }
+
 
 afficherQuestion();
