@@ -1,9 +1,21 @@
-body {
-    font-family: Arial, sans-serif;
-    max-width: 600px;
-    margin: auto;
+body.good {
+    background-image: url("image_vrai.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
-.question {
-    margin-bottom: 20px;
+body.bad {
+    background-image: url("image_fausse.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+#message {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+#next-btn {
+    margin-top: 20px;
+    display: none;
 }
