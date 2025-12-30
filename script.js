@@ -147,7 +147,7 @@ function finQuiz() {
             afficherMosaique();
         }
         boutonCadeau = `
-            <button onclick="window.location.href='https://track.pstmrk.it/3s/wecandoo.fr%2Fdiscover-my-gift%2Fa1f0a945-5b07-4568-a73f-9b5c2a328fbf%3Futm_medium%3Demail%26utm_source%3Dsite%26utm_campaign%3DgiftCardBuyer/GQxH/iFnCAQ/AQ/59d0a1cc-e96d-4835-8ed4-326e07906629/2/Cu3rmpwfrL'">
+            <button onclick="window.location.href='amour'">
                 🎁 Voir le cadeau
             </button>
         `;
