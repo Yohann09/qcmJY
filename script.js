@@ -89,7 +89,7 @@ function valider() {
         bonne = selected.value === q.bonneReponse;
     } else {
         const input = document.getElementById("text-answer").value.trim();
-        bonne = input === q.bonneReponse;
+        bonne = input.toLocaleLowerCase() === q.bonneReponse.toLocaleLowerCase();
     }
 
     if (bonne) {
